@@ -63,7 +63,20 @@
  	* @return   (bool) 
 	*/	
 	function sts_mail( $to, $subject, $body, $headers = array(), $attachments = array() ){
+		//Adding the From Header
+		$headers_default = array(
+			'From: "' . get_bloginfo( 'name' ) . '" <' . get_bloginfo( 'admin_email' ) . '>'
+		);
 		$settings = get_option( 'sts-core-settings' );
+		$from_string = 'From:';
+		if( isset( $settings['email']['from_name'] ) )
+			$from_string .= ' ' . $settings['email']['from_name'];
+		if( isset( $settings['email']['from_email'] ) )
+			$from_string .= ' <' . $settings['email']['from_email'] . '>';
+		if( $from_string != 'From:' )
+			$headers_default = array( $from_string );
+		$headers = wp_parse_args( $headers, $headers_default );
+
 		$body = apply_filters( 'the_content', $body );
 		if( isset( $settings['email']['wrapper'] ) ){
 

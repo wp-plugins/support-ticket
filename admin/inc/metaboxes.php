@@ -22,11 +22,14 @@ function sts_add_meta_boxes(){
 		//Settings Metaboxes
 		add_meta_box( 'ticket-setting-email-notification', __( 'Email notification', 'sts' ), 'sts_settings_metabox_email_notification_render', 'ticket-settings-email', 'normal' );
 		add_meta_box( 'ticket-setting-user-agent', __( 'Ticket agents', 'sts' ), 'sts_settings_metabox_user_agent_render', 'ticket-settings-user', 'normal' );
+		add_meta_box( 'ticket-setting-email-sender', __( 'Email Sender', 'sts' ), 'sts_settings_metabox_email_sender_render', 'ticket-settings-email', 'normal' );
 		add_meta_box( 'ticket-setting-email-wrapper', __( 'Email wrapper', 'sts' ), 'sts_settings_metabox_email_wrapper_render', 'ticket-settings-email', 'normal' );
 		add_meta_box( 'ticket-setting-ticket-wrapper', __( 'Additional ticket fields', 'sts' ), 'sts_settings_metabox_metafields_render', 'ticket-settings-ticket', 'normal' );
 	
 	}
 }
+
+
 /**
  * Renders the metafields metabox
  *
@@ -258,6 +261,62 @@ function sts_settings_metabox_user_agent_render( $args ){
 			endif;
 			endforeach; ?>
 		</select>
+	</section>
+	<?php
+}
+
+/**
+ * Update the Email sender settings
+ * 
+ * Explanations on this filter can be found in admin/inc/functions-settings.php
+ * 
+ *
+ * @since 1.0.5
+ *
+ * @param (mixed)		$return 	
+ * @return (mixed)		$return
+ **/
+add_filter( 'sts-settings-update-email', 'sts_settings_update_email_sender' );
+function sts_settings_update_email_sender( $return ){
+	$settings = get_option( 'sts-core-settings' );
+	if( isset( $_POST['email']['from_name'] ) )
+		$settings['email']['from_name'] = sanitize_text_field( $_POST['email']['from_name'] );
+	if( isset( $_POST['email']['from_email'] ) )
+		$settings['email']['from_email'] = sanitize_text_field( $_POST['email']['from_email'] );
+
+
+	update_option( 'sts-core-settings', $settings );
+	return $return;
+}
+
+
+/**
+ * Renders the email sender metabox in the settings
+ *
+ * @since 1.0.5
+ * 
+ * @param (stdClass) 	$args 	empty
+ * @return (void)
+ **/
+function sts_settings_metabox_email_sender_render( $args ){
+	$settings = get_option( 'sts-core-settings' );
+
+	$from_name =  get_bloginfo( 'name' );
+	$from_email = get_bloginfo( 'admin_email' );
+	if( isset( $settings['email']['from_name'] ) )
+		$from_name = $settings['email']['from_name'];
+	if( isset( $settings['email']['from_email'] ) )
+		$from_email = $settings['email']['from_email'];
+	
+
+	?>
+	<section>
+		<label for="standard-email-from-name"><?php _e( 'Sender Name', 'sts' ); ?></label>
+		<input type="text" id="standard-email-from-name" name="email[from_name]" value="<?php echo sanitize_text_field( $from_name ); ?>" />
+	</section>
+	<section>
+		<label for="standard-email-from-email"><?php _e( 'Sender Email', 'sts' ); ?></label>
+		<input type="email" id="standard-email-from-email" name="email[from_email]" value="<?php echo sanitize_text_field( $from_email ); ?>" />
 	</section>
 	<?php
 }
@@ -673,7 +732,10 @@ function sts_metabox_message_render( $post ){
 					<?php printf( __( 'by %s', 'sts' ), get_the_author() ); ?>,
 					<?php the_date(); ?>, <?php the_time(); ?>
 				</p>
-				<?php the_content(); ?>
+				<?php 
+
+				$pattern = '(?xi)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`\!()\[\]{};:\'".,<>?«»“”‘’]))';     
+				echo nl2br( preg_replace("!$pattern!i", "<a href=\"\\0\" rel=\"nofollow\" target=\"_blank\">\\0</a>", get_the_content() ) ); ?>
 			</div>
 			<ul class="ticket-history">
 				<?php
@@ -696,7 +758,10 @@ function sts_metabox_message_render( $post ){
 								<?php echo get_the_title( $post->ID ); ?>
 							</h3>
 							<div class="entry">
-								<?php echo apply_filters( 'the_content', $post->post_content ); ?>
+								<?php
+								$pattern = '(?xi)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`\!()\[\]{};:\'".,<>?«»“”‘’]))';     
+								$post->post_content = preg_replace("!$pattern!i", "<a href=\"\\0\" rel=\"nofollow\" target=\"_blank\">\\0</a>", $post->post_content );
+								echo apply_filters( 'the_content', $post->post_content ); ?>
 							</div>
 						</li>
 					<?php 

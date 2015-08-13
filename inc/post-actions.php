@@ -27,8 +27,14 @@
 		$post_data = apply_filters( 'sts-create-new-ticket-post', $_POST['t'] );
 
 		foreach( $post_data as $key => $val ){
-			if( is_string( $val ) )
+			if( is_string( $val ) && $key != 'message' )
 				$post_data[ $key ] = trim( sanitize_text_field( $val ) );
+			elseif( $key == 'message' ){
+				$val = explode( PHP_EOL, $val );
+				foreach( $val as $sub_key => $sub_val )
+					$val[ $sub_key ] = sanitize_text_field( $sub_val );
+				$post_data[ $key ] = implode( PHP_EOL, $val );
+			}
 		}
 		
 		if( isset( $post_data['user'] ) && empty( $post_data['user'] ) ){
