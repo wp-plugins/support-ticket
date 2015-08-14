@@ -134,6 +134,15 @@ function sts_settings_user_update_roles( $return ){
 			$role->add_cap( $cap, $has_cap );
 		}
 	}
+
+	/**
+	 * After the roles have been updated.
+	 *
+	 * @since 1.0.5
+	 *
+	 * @param 	(array)	$roleArr 	The roles Array
+	 **/
+	do_action( 'sts-after-roles-updated', $roleArr );
 	return $return;
 }
 

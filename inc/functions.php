@@ -43,6 +43,15 @@
 			$user_query = new WP_User_Query( $args );
 			$agents = array_merge( $user_query->results, $agents );
 		}
+
+		//Remove double users
+		$double_users = array();
+		foreach( $agents as $key => $val ){
+			if( in_array( $val->ID, $double_users ) )
+				unset( $agents[ $key ] );
+
+			$double_users[] = $val->ID;
+		}
 		
 		/**
 		* Filter the possible agents array
