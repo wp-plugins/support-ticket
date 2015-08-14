@@ -31,13 +31,18 @@
  	* @return   (array) 	Array of users
 	*/		
 	function sts_get_possible_agents(){
+		$possible_roles = array();
+		$roles = get_editable_roles();
+		foreach( $roles as $role_key => $role ){
+			if( isset( $role['capabilities']['read_assigned_tickets'] ) && $role['capabilities']['read_assigned_tickets'] == 1 )
+				$possible_roles[] = $role_key;
+		}
 		$agents = array();	
-		$args = array( 'role' => 'Administrator' );
-		$user_query = new WP_User_Query( $args );
-		$agents = array_merge( $user_query->results, $agents );
-		$args = array( 'role' => 'ticket-agent' );
-		$user_query = new WP_User_Query( $args );
-		$agents = array_merge( $agents, array('-' ), $user_query->results );
+		foreach( $possible_roles as $role ){
+			$args = array( 'role' => $role );
+			$user_query = new WP_User_Query( $args );
+			$agents = array_merge( $user_query->results, $agents );
+		}
 		
 		/**
 		* Filter the possible agents array

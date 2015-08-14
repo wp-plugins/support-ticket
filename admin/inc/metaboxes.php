@@ -22,11 +22,119 @@ function sts_add_meta_boxes(){
 		//Settings Metaboxes
 		add_meta_box( 'ticket-setting-email-notification', __( 'Email notification', 'sts' ), 'sts_settings_metabox_email_notification_render', 'ticket-settings-email', 'normal' );
 		add_meta_box( 'ticket-setting-user-agent', __( 'Ticket agents', 'sts' ), 'sts_settings_metabox_user_agent_render', 'ticket-settings-user', 'normal' );
+		add_meta_box( 'ticket-setting-user-roles', __( 'Roles & Capabilities', 'sts' ), 'sts_settings_metabox_user_roles_render', 'ticket-settings-user', 'normal' );
 		add_meta_box( 'ticket-setting-email-sender', __( 'Email Sender', 'sts' ), 'sts_settings_metabox_email_sender_render', 'ticket-settings-email', 'normal' );
 		add_meta_box( 'ticket-setting-email-wrapper', __( 'Email wrapper', 'sts' ), 'sts_settings_metabox_email_wrapper_render', 'ticket-settings-email', 'normal' );
 		add_meta_box( 'ticket-setting-ticket-wrapper', __( 'Additional ticket fields', 'sts' ), 'sts_settings_metabox_metafields_render', 'ticket-settings-ticket', 'normal' );
 	
 	}
+}
+
+/**
+ * Renders the user roles & capabilities metabox
+ *
+ * @since 1.0.5
+ *
+ * @param (stdClass) 	$args 	empty
+ * @return (void)
+ **/
+function sts_settings_metabox_user_roles_render( $args ){
+	$roles = get_editable_roles();
+	?>
+	<table class="wp-list-table widefat fixed striped">
+		<thead>
+			<tr>
+				<th><?php _e( 'Role', 'sts' ); ?></th>
+				<th><?php _e( 'Create Ticket', 'sts' ); ?></th>
+				<th><?php _e( 'Read assigned tickets', 'sts' ); ?></th>
+				<th><?php _e( 'Assign tickets to agents', 'sts' ); ?></th>
+				<th><?php _e( 'Delete tickets', 'sts' ); ?></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach( $roles as $role_key => $role ): ?>
+			<tr>
+				<th><?php echo $role['name']; ?></th>
+				<th><?php 
+					$checked = '';
+					if( isset( $role['capabilities']['read_own_tickets'] ) && $role['capabilities']['read_own_tickets'] == 1 )
+						$checked = 'checked="checked"';
+					?>
+					<input type="checkbox" name="user[roles][read_own_tickets][<?php echo $role_key; ?>]" value="1" <?php echo $checked; ?> />
+				</th>
+				<th><?php 
+					$checked = '';
+					if( isset( $role['capabilities']['read_assigned_tickets'] ) && $role['capabilities']['read_assigned_tickets'] == 1 )
+						$checked = 'checked="checked"';
+					?>
+					<input type="checkbox" name="user[roles][read_assigned_tickets][<?php echo $role_key; ?>]" value="1" <?php echo $checked; ?> />
+				</th>
+				<th><?php 
+					$checked = '';
+					if( isset( $role['capabilities']['assign_agent_to_ticket'] ) && $role['capabilities']['assign_agent_to_ticket'] == 1 )
+						$checked = 'checked="checked"';
+					?>
+					<input type="checkbox" name="user[roles][assign_agent_to_ticket][<?php echo $role_key; ?>]" value="1" <?php echo $checked; ?> />
+				</th>
+				<th><?php 
+					$checked = '';
+					if( isset( $role['capabilities']['delete_other_tickets'] ) && $role['capabilities']['delete_other_tickets'] == 1 )
+						$checked = 'checked="checked"';
+					?>
+					<input type="checkbox" name="user[roles][delete_other_tickets][<?php echo $role_key; ?>]" value="1" <?php echo $checked; ?> />
+				</th>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php
+}
+
+/**
+ * Update the Role & Capabilites settings
+ * 
+ * Explanations on this filter can be found in admin/inc/functions-settings.php
+ * 
+ *
+ * @since 1.0.5
+ *
+ * @param (mixed)		$return 	
+ * @return (mixed)		$return
+ **/
+add_filter( 'sts-settings-update-user', 'sts_settings_user_update_roles' );
+function sts_settings_user_update_roles( $return ){
+	$roles = get_editable_roles();
+	$roleArr = array();
+	foreach( $roles as $role_key => $role ){
+		$roleArr[ $role_key ] = array(
+			'read_own_tickets' 		=> false,
+			'read_assigned_tickets'	=> false,
+			'read_other_tickets'	=> false,
+			'delete_other_tickets'	=> false,
+			'update_tickets'	=> false,
+			'assign_agent_to_ticket'	=> false,
+		);
+	}
+
+	foreach( $_POST['user']['roles'] as $cap => $roles_with_cap ){
+		foreach( $roles_with_cap as $role_name => $val ){
+			if( $val == 1 ){
+				$roleArr[ $role_name ][ $cap ] = true;
+				if( $cap == 'read_assigned_tickets' )
+					$roleArr[ $role_name ][ 'update_tickets' ] = true;
+				if( $cap == 'read_assigned_tickets' )
+					$roleArr[ $role_name ][ 'read_other_tickets' ] = true;
+			}
+		}
+	}
+
+	foreach( $roleArr as $role => $caps ){
+		$role = get_role( strtolower( $role ) );
+		foreach( $caps as $cap => $has_cap ){
+			$role->add_cap( $cap, $has_cap );
+		}
+	}
+	return $return;
 }
 
 
