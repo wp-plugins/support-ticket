@@ -20,6 +20,7 @@
 		$admin_role->add_cap( 'read_own_tickets', true );
 		$admin_role->add_cap( 'read_assigned_tickets', true );
 		$admin_role->add_cap( 'read_other_tickets', true );
+		$admin_role->add_cap( 'delete_other_tickets', true );
 		$admin_role->add_cap( 'update_tickets', true );
 		$admin_role->add_cap( 'assign_agent_to_ticket', true );
 	}

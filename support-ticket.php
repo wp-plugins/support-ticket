@@ -52,11 +52,22 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	function sts_init(){
 		if( ! session_id() )
 			session_start();
-
+		
 		$args = array(
 			'label' => __( 'Ticket', 'sts' ),
 			'hierarchical' => true,
 		);
+
+		/**
+ 		* Filters the custom post type args
+ 		* see https://codex.wordpress.org/Function_Reference/register_post_type
+ 		*
+ 		* @since 1.0.5
+ 		*
+ 		* @param 	(array) 	$args 	the argument array
+ 		* @return 	(array) 	$args 	the argument array
+ 		*/
+		$args = apply_filters( 'sfs-custom-posttype-args', $args );
 		register_post_type( 'ticket', $args );
 
 		//POST actions

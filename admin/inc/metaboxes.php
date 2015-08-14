@@ -171,7 +171,7 @@ function sts_settings_metabox_metafields_render( $args ){
 					<small><?php _e( 'Use a new line for each choice.', 'sts' ); ?></small>
 				</p>
 			</div>
-			<button class="button default" id="do-sts-edit-ticket-field"><?php _e( 'Edit', 'ri' ); ?></button>
+			<button class="button default" id="do-sts-edit-ticket-field"><?php _e( 'Edit', 'sts' ); ?></button>
 	</div>
 
 	<div id="sts-create-new-ticket-field" style="display:none;">
@@ -202,7 +202,7 @@ function sts_settings_metabox_metafields_render( $args ){
 					<small><?php _e( 'Use a new line for each choice.', 'sts' ); ?></small>
 				</p>
 			</div>
-			<button class="button default" id="do-sts-create-new-ticket-field"><?php _e( 'Add', 'ri' ); ?></button>
+			<button class="button default" id="do-sts-create-new-ticket-field"><?php _e( 'Add', 'sts' ); ?></button>
 	</div>
 	<?php
 }
@@ -740,9 +740,10 @@ function sts_metabox_message_render( $post ){
 			<ul class="ticket-history">
 				<?php
 					$args = array(
-						'post_type'		=> 'ticket',
-						'post_status'	=> 'any',
-						'post_parent'	=> get_the_ID(),
+						'post_type'			=> 'ticket',
+						'post_status'		=> 'any',
+						'posts_per_page' 	=> -1,
+						'post_parent'		=> get_the_ID(),
 					);
 
 					$subquery = new WP_Query( $args );

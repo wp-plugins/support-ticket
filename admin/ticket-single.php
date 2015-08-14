@@ -72,7 +72,11 @@ if( isset( $_POST["t-action"] ) && $_POST["t-action"] == 'ticket-admin-update' )
 	</h1>
 	<?php else: 
 		$query->the_post();
-		update_post_meta( get_the_ID(), 'ticket-read', 1 );
+
+		//If the assigned ticket agent reads this ticket,
+		//The postmeta information the ticket has been read will be set.
+		if( get_current_user_id() == (int) get_post_meta( get_the_ID(), 'ticket-agent', true ) )
+			update_post_meta( get_the_ID(), 'ticket-read', 1 );
 	?>
 	<h2>
 		<img src="<?php echo STS_URL; ?>assetts/logo-small.svg" height="25px" />

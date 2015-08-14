@@ -28,15 +28,18 @@
 	color: #666;
 }
 
-#sts-wrap .status-open td{
+#sts-wrap .status-open td,
+#sts-wrap .status-open th{
 	background-color: rgba( 200, 0, 0, .3 );
 }
 
-#sts-wrap .status-pending td{
+#sts-wrap .status-pending td,
+#sts-wrap .status-pending th{
 	background-color: rgba( 200, 200, 0, .3 );
 }
 
-#sts-wrap .status-close td{
+#sts-wrap .status-close td,
+#sts-wrap .status-close th{
 	background-color: rgba( 0, 200, 0, .3 );
 }
 

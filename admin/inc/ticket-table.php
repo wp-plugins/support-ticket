@@ -12,10 +12,11 @@
 	 **/
 	add_filter( 'sts-tickets-table-columns', 'sts_ticket_table_columns', 1, 1 );
 	function sts_ticket_table_columns( $columns ){
-			if( current_user_can( 'read_other_tickets' ) )
+			if( current_user_can( 'read_assigned_tickets' ) )
 				$columns = array_merge( $columns, array( 'unread'		=> '' ) );
 
   			return array_merge( $columns, array(    			
+    			'cb'			=> '<input type="checkbox" />',		
     			'ID'			=> __( 'ID', 'sts' ),
     			'subject'		=> __( 'Subject', 'sts' ),
     			'date'			=> __( 'Date', 'sts' ),
@@ -38,7 +39,7 @@
 	function sts_ticket_table_column_render( $current, $item, $column_name ){
 		switch( $column_name ){
 			case 'unread':
-				if( 'unread' == sts_get_the_ticket_read( $item->ID ) && current_user_can( 'read_other_tickets' ) )
+				if( 'unread' == sts_get_the_ticket_read( $item->ID ) && current_user_can( 'read_assigned_tickets' ) )
 					return '<a href="admin.php?page=sts&action=single&ID=' . $item->ID . '"><span title="' . __( 'Unread', 'sts' ) . '" class="ticket-unread">' . __( 'Unread', 'sts' ) . '</span></a>';
 				return '';
 			case 'ID':
@@ -96,7 +97,7 @@
 	add_action( 'sts-extra-tablenav', 'sts_table_add_status_filter' );
 	function sts_table_add_status_filter( $which ){
 
-			echo '<form method="get"><input type="hidden" name="page" value="sts" /><label class="screen-reader-text" for="status-filter">' . __( 'Filter by ticket status', 'sts' ) . '</label>';
+			echo '<label class="screen-reader-text" for="status-filter">' . __( 'Filter by ticket status', 'sts' ) . '</label>';
 			echo '<select id="status-filter" name="status">';
 			$status_array = sts_get_statusArr();
 			$current_status_index = -1;
@@ -110,10 +111,31 @@
 			}
 			echo '</select>';
 			submit_button( __( 'Filter' ), 'button', 'filter_action', false, array( 'id' => 'post-query-submit' ) );
-			echo '</form>';
+			echo '';
 	}
 
 	class STS_Tickets_Table extends WP_List_Table {
+		function get_bulk_actions() {
+  			$actions = array();
+  			if( current_user_can( 'delete_other_tickets' ) )
+    			$actions['delete'] = __( 'Delete' );
+    		/**
+ 			* Filters the bulk actions for the ticket overview table
+ 			*
+ 			* @since 1.0.5
+ 			*
+ 			* @param 	(array) 	$actions 	the actions
+ 			* @return 	(array) 	$actions 	the actions
+ 			*/
+  			return apply_filters( 'sts-tickets-table-bulk-actions', $actions );
+		}
+
+		function column_cb($item) {
+       		return sprintf(
+            	'<input type="checkbox" name="ticket[]" value="%s" />', $item->ID
+        	);    
+    	}
+
 		function get_columns(){
 			$columns = array();
 			/**
@@ -213,6 +235,29 @@
 			echo $this->single_row_columns( $item );
 			echo '</tr>';
 
+		}
+
+		function display_tablenav( $which ) {
+			?>
+			<div class="tablenav <?php echo esc_attr( $which ); ?>">
+				<?php if( 'top' == $which ): ?>
+				<form method="get">
+ 					<input type="hidden" name="page" value="sts" />
+					<?php $this->extra_tablenav( $which ); ?>
+				</form>
+
+				<form method="post">
+					<?php wp_nonce_field( 'sts-bluk-action', 't-nonce' ); ?>
+					<input type="hidden" name="sts-action" value="bulk-action" />
+					<div class="alignleft actions bulkactions">
+						<?php $this->bulk_actions( $which ); ?>
+					</div>
+					
+				<?php endif; ?>
+				<?php $this->pagination( $which ); ?>
+				<br class="clear" />
+			</div>
+			<?php
 		}
 
 		function column_default( $item, $column_name ) {
