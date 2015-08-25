@@ -11,7 +11,7 @@ The support ticket solution for WordPress
 == Description ==
 Support Ticket enables you to easily create your own ticket system on your WordPress page. Users can submit tickets, ticket agents can answer tickets, change the ticket status, enter private notes. With a shortcode, you can display the create ticket form on the frontend. Visitors who are not logged in will be registered, or - if the submitted email address exists in the database - asked to login.
 
-[youtube https://www.youtube.com/embed/nhYDL84Z4o0]
+[youtube https://www.youtube.com/watch?v=nhYDL84Z4o0]
 
 Administrators can change the ticket agents and configure the plugin. You can define an HTML email template, which will be used for the correspondence with your clients. You can extend the ticket form with textfields and selectboxes of your own.
 
