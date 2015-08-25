@@ -1,0 +1,481 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Support Ticket\n"
+"POT-Creation-Date: 2015-08-14 13:45+0200\n"
+"PO-Revision-Date: 2015-08-14 13:46+0200\n"
+"Last-Translator: David Remer <webmaster@websupporter.net>\n"
+"Language-Team: Websupporter <webmaster@websupporter.net>\n"
+"Language: Deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\tickets\\wp-content\\plugins"
+"\\support-ticket\n"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/support-ticket.php:57
+msgid "Ticket"
+msgstr "Ticket"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:20
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:244
+msgid "Trash"
+msgstr "Papierkorb"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:21
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:245
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:282
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:22
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:300
+msgid "Input field"
+msgstr "Eingabefeld"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:23
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:301
+msgid "Selectbox"
+msgstr "Selectbox"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:70
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:72
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/index.php:13
+msgid "Tickets"
+msgstr "Tickets"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:74
+msgid "New Ticket"
+msgstr "Neues Ticket"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:75
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/settings.php:16
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:91
+#, php-format
+msgid "Thank you for using %s."
+msgstr "Danke, dass Du %s benutzt."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:117
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/admin.php:120
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/ticket-single.php:3
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/functions-settings.php:134
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:17
+msgid "Something went wrong :/"
+msgstr "Etwas ist schief gelaufen :/"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/index.php:18
+msgid "Updated."
+msgstr "Aktualisiert."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/settings.php:23
+msgid "Settings updated."
+msgstr "Einstellungen aktualisiert."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/ticket-new.php:13
+msgid "Create a new ticket"
+msgstr "Erstelle ein neues Ticket"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/ticket-new.php:28
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes/ticket-create.php:49
+msgid "Send"
+msgstr "Senden"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/ticket-single.php:40
+msgid "Ticket updated."
+msgstr "Ticket aktualisiert."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/ticket-single.php:43
+msgid "Ticket created."
+msgstr "Ticket erstellt."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/ticket-single.php:71
+msgid "Ticket not found :/"
+msgstr "Ticket nicht gefunden :/"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/functions-settings.php:15
+msgid "Welcome"
+msgstr "Willkommen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/functions-settings.php:16
+msgid "Welcome to WP Support Ticket!"
+msgstr "Willkommen bei WP Support Ticket!"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/functions-settings.php:16
+msgid "On this page, you can configure the plugin, so it fits your needs."
+msgstr ""
+"Auf dieser Seite kannst Du das Plugin entsprechend Deiner Bedürfnisse "
+"konfigurieren."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/functions-settings.php:21
+msgid "Email settings"
+msgstr "Email Einstellungen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/functions-settings.php:27
+msgid "User settings"
+msgstr "Benutzereinstellungen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/functions-settings.php:33
+msgid "Ticket settings"
+msgstr "Ticketeinstellungen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/functions-settings.php:122
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:643
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:927
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:9
+#, php-format
+msgid "Ticket #%d"
+msgstr "Ticket #%d"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:13
+msgid "Metafields"
+msgstr "Metafelder"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:15
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:908
+msgid "Answer"
+msgstr "Antwort"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:16
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:24
+msgid "Status"
+msgstr "Status"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:19
+msgid "Private Note"
+msgstr "Private Notiz"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:23
+msgid "Email notification"
+msgstr "Email Benachrichtigung"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:24
+msgid "Ticket agents"
+msgstr "Ticket Agent"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:25
+msgid "Roles & Capabilities"
+msgstr "Benutzerrollen & Fähigkeiten"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:26
+msgid "Email Sender"
+msgstr "Email Absender"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:27
+msgid "Email wrapper"
+msgstr "Email Template"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:28
+msgid "Additional ticket fields"
+msgstr "Zusätzliche Ticketfelder"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:47
+msgid "Role"
+msgstr "Rolle"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:48
+msgid "Create Ticket"
+msgstr "Tickets erstellen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:49
+msgid "Read assigned tickets"
+msgstr "Lese zugewiesene Tickets"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:50
+msgid "Assign tickets to agents"
+msgstr "Tickets Agenten zuweisen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:51
+msgid "Delete tickets"
+msgstr "Tickets löschen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:154
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/functions.php:255
+msgid "Name"
+msgstr "Name"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:154
+msgid "Value"
+msgstr "Wert"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:252
+msgid "Add a new form field"
+msgstr "Neues Feld hinzufügen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:252
+msgid "Create new field"
+msgstr "Neues Feld erstellen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:259
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:287
+msgid "Label"
+msgstr "Text"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:264
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:292
+msgid "Meta key"
+msgstr "Metaschlüssel"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:269
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:297
+msgid "Type"
+msgstr "Typ"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:275
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:306
+msgid "Choices"
+msgstr "Auswahloptionen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:279
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:310
+msgid "Use a new line for each choice."
+msgstr "Benutze eine neue Zeile für jede Option."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:313
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:361
+msgid "New tickets are assigned to"
+msgstr "Neue Tickets werden folgendem User zur Bearbeitung zugeordnet"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:422
+msgid "Sender Name"
+msgstr "Absender Name"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:426
+msgid "Sender Email"
+msgstr "Absender Email"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:450
+msgid "Email Wrapper"
+msgstr "Email Template"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:515
+msgid "Notifiy ticket owner on answer"
+msgstr "Benachrichtige den Ticket Besitzer bei einer Antwort"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:519
+msgid "Notifiy agent owner on answer"
+msgstr "Benachrichtige den Ticket Agenten bei einer Antwort"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:609
+#, php-format
+msgid "Current status: %s"
+msgstr "Aktueller Status: %s"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:610
+#, php-format
+msgid "Current agent: %s"
+msgstr "Aktueller Agent: %s"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:616
+msgid "Update status"
+msgstr "Status aktualisiert"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:629
+msgid "Current agent"
+msgstr "Aktueller Agent"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:703
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:766
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:247
+msgid "Please click the link to reply:"
+msgstr "Klicke folgenden Link, um zu antworten:"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:802
+#, php-format
+msgid "Re: [Ticket #%d]"
+msgstr "Re: [Ticket #%d]"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:840
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:864
+#, php-format
+msgid "by %s"
+msgstr "von %s"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:895
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:21
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/functions.php:276
+msgid "Subject"
+msgstr "Betreff"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:902
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/functions.php:286
+msgid "Message"
+msgstr "Nachricht"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/metaboxes.php:926
+msgid ""
+"Private notes can only be seen by other agents and admins. Not by the ticket "
+"owner himself."
+msgstr ""
+"Private Notizen können nur von anderen Agenten und Administratoren gesehen "
+"werden. Der Ticketbesitzer sieht diese nicht."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:20
+msgid "ID"
+msgstr "ID"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:22
+msgid "Date"
+msgstr "Datum"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:23
+msgid "From"
+msgstr "Von"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:43
+msgid "Unread"
+msgstr "Ungelesen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:54
+msgid "User not found :/"
+msgstr "Benutzer nicht gefunden :/"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:100
+msgid "Filter by ticket status"
+msgstr "Nach Ticket Status filtern"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:107
+msgid "Every status"
+msgstr "Jeder Status"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:113
+msgid "Filter"
+msgstr "Filter"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:121
+msgid "Delete"
+msgstr "Löschen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/admin/inc/ticket-table.php:203
+msgid "No tickets found."
+msgstr "Keine Tickets gefunden."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/functions.php:147
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/functions.php:265
+msgid "Email"
+msgstr "Email"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/functions.php:367
+msgid "Open"
+msgstr "Offen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/functions.php:368
+msgid "Pending"
+msgstr "In Bearbeitung"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/functions.php:369
+msgid "Close"
+msgstr "Geschlossen"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/hooks.php:9
+msgid "Ticket User"
+msgstr "Ticket User"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/hooks.php:11
+msgid "Ticket Agent"
+msgstr "Ticket Agent"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:41
+msgid "Please enter your name."
+msgstr "Bitte gebe Deinen Namen an."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:46
+msgid "Please enter your email address."
+msgstr "Bitte gebe Deine Email Adresse an."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:51
+msgid "Please enter a subject."
+msgstr "Bitte gebe einen Betreff an."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:56
+msgid "Please enter a message."
+msgstr "Bitte gebe eine Nachricht ein."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:152
+#, php-format
+msgid "Welcome to %s"
+msgstr "Willkommen bei %s"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:153
+#, php-format
+msgid "Hello %s,"
+msgstr "Hallo %s,"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:154
+#, php-format
+msgid "you've just registered on %s and submitted a ticket."
+msgstr "Du hast dich soeben auf %s registriert und ein Ticket erstellt."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:155
+msgid "You can login using the following informations:"
+msgstr "Du kannst Dich mit folgenden Informationen einloggen:"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:156
+#, php-format
+msgid "Loginurl: %s"
+msgstr "Login-URL: %s"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:157
+#, php-format
+msgid "Username: %s"
+msgstr "Benutzername: %s"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:158
+#, php-format
+msgid "Password: %s"
+msgstr "Passwort: %s"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/post-actions.php:159
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes/ticket-create-done.php:21
+msgid "Thank you."
+msgstr "Danke."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes.php:35
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes.php:51
+msgid "Shortcode file not found :/"
+msgstr "Shortcode Datei nicht gefunden :/"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes/ticket-create-done.php:13
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes/ticket-create.php:15
+#, php-format
+msgid "Hello %s"
+msgstr "Hallo %s"
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes/ticket-create-done.php:15
+msgid "We have received your ticket and will contact you as soon as possible."
+msgstr ""
+"Wir haben Dein Ticket erhalten und werden Dich sobald wie möglich "
+"kontaktieren."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes/ticket-create-done.php:16
+#, php-format
+msgid "Your ticket is filed as #%d."
+msgstr "Dein Ticket ist abgelegt als #%d."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes/ticket-create-done.php:18
+msgid "Click here to see your ticket."
+msgstr "Klicke hier um Dein Ticket zu sehen."
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes/ticket-create.php:20
+#, php-format
+msgid ""
+"It seems, you have already an account registered with your mail adress %s"
+msgstr ""
+"Es scheint als hättest Du schon einen Account mit der Email Adresse %s "
+
+#: C:\xampp\htdocs\tickets\wp-content\plugins\support-ticket/inc/shortcodes/ticket-create.php:24
+msgid "Please log in before you proceed."
+msgstr "Bitte logge Dich ein, bevor Du fortfährst."
