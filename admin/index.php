@@ -18,6 +18,8 @@
 		<div id="message" class="updated notice is-dismissible"><p><?php _e( 'Updated.', 'sts' ); ?></p></div>
 	<?php endif; ?>
 	<?php
+
+		add_filter( 'list_table_primary_column', 'sts_standard_table_column', 10, 2 );
 		$table = new STS_Tickets_Table();
  		$table->prepare_items(); ?>
  		<?php $table->display(); ?>

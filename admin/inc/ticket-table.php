@@ -2,6 +2,31 @@
 	if( ! class_exists( 'WP_List_Table' ) )
 		require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 
+
+	/**
+ 	* Define the standard column for the table
+	*
+ 	* @since 	1.0.6
+ 	*
+ 	* @param (array)	$columns
+ 	* @return (array)	$columns
+	 **/
+	function sts_standard_table_column( $column, $screen ) {
+		$column = 'subject';
+    	/**
+ 		* Filters the standard table column
+ 		* which was introduced in WP 4.3
+ 		* see https://make.wordpress.org/core/2015/08/08/list-table-changes-in-4-3/
+ 		*
+ 		* @since 1.0.5
+ 		*
+ 		* @param 	(string) 	$column 	the columns ID
+ 		* @return 	(string) 	$column 	the columns ID
+ 		*/
+		$column = apply_filters( 'sts-standard-table-column', $column );
+		return $column;
+	}
+
 	/**
  	* Add the standard columns
 	*
@@ -17,8 +42,8 @@
 
   			return array_merge( $columns, array(    			
     			'cb'			=> '<input type="checkbox" />',		
-    			'ID'			=> __( 'ID', 'sts' ),
     			'subject'		=> __( 'Subject', 'sts' ),
+    			'ID'			=> __( 'ID', 'sts' ),
     			'date'			=> __( 'Date', 'sts' ),
     			'from'			=> __( 'From', 'sts' ),
     			'status'		=> __( 'Status', 'sts' ),

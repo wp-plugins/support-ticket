@@ -4,7 +4,7 @@
 	 * Author: David Remer
 	 * Plugin URI: http://wpsupportticket.com/
 	 * Author URI: http://websupporter.net/
-	 * Version: 1.0.5
+	 * Version: 1.0.6
 	 * Description: Easy to use support ticket system for WordPress.
 	 * License: GPLv2 or later
 	 * Text Domain: sts
